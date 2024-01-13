@@ -1,10 +1,10 @@
-import {MapContainer, TileLayer, Marker, Popup, Polyline, Circle, CircleMarker} from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet';
 
 const icon = L.icon({ iconUrl: "/images/mark.png" })
 
-const milleniumPolyline:[number, number][] = [
+const milleniumPolyline: [number, number][] = [
     [49.26597488669037, -123.07897627382238],
     [49.26274199779381, -123.06923650285458],
     [49.25905001295821, -123.04536927401993],
@@ -24,7 +24,7 @@ const milleniumPolyline:[number, number][] = [
     [49.28580313362013, -122.79155682984432],
 ]
 
-const expoPolyline:[number, number][][] = [
+const expoPolyline: [number, number][][] = [
     [
         [49.28612693436166, -123.11161228935825],
         [49.2855947612237, -123.12013952984424],
@@ -56,15 +56,15 @@ const expoPolyline:[number, number][][] = [
     ]
 ]
 
-const milleniumLine = { color: 'brown'}
-const expoLine = {color: 'blue'}
+const milleniumLine = { color: 'brown' }
+const expoLine = { color: 'blue' }
 
-const center:[number, number] = [49.25299, -123.00600];
+const center: [number, number] = [49.25299, -123.00600];
 
 const Map = () => {
-    return(
+    return (
         <MapContainer
-            style={{height: "100vh"}}
+            style={{ height: "100vh" }}
             center={[49.24966, -123.00934]} zoom={14} scrollWheelZoom={false}
         >
             <TileLayer
@@ -264,9 +264,9 @@ const Map = () => {
                     Lafarge Lake-Douglas Station
                 </Popup>
             </Marker>
-            
-            <Polyline pathOptions={milleniumLine} positions={milleniumPolyline}/>
-            <Polyline pathOptions={expoLine} positions={expoPolyline}/>
+
+            <Polyline pathOptions={milleniumLine} positions={milleniumPolyline} />
+            <Polyline pathOptions={expoLine} positions={expoPolyline} />
 
         </MapContainer>
     )
